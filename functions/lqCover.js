@@ -1,8 +1,8 @@
-const { generateLearningQuickCoverURL } = require('./utils/StreamUtils');
+const { genetateGDSCCoverURL } = require('./utils/GDSCUtils');
 const simpleReturn = require('netlify-functions-simple-return');
 const fetch = require('node-fetch');
 const { client: sanityClient } = require('./utils/sanity');
-exports.handler = async (event) => {
+exports.handler = async(event) => {
     const headers = {
         'access-control-allow-origin': '*',
         'access-control-allow-headers': '*',
@@ -22,7 +22,7 @@ exports.handler = async (event) => {
     const { title, guestName, guestTitle, guestImage, time, id } = body;
 
     try {
-        const url = generateLearningQuickCoverURL(
+        const url = genetateGDSCCoverURL(
             title,
             guestName,
             guestTitle,
